@@ -1,52 +1,99 @@
 /* PC */
 @media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
 }
 
 /* Tablet & Mobile */
 @media (max-width: 991.98px) {
-    /* ẩn navbar */
-.navbar{
+  /* ẩn navbar */
+  .navbar {
     display: none;
-}
-/* chuyển logo vào giữa */
-.header-top{
-position: relative;}
-.header__logo{
+  }
+  /* chuyển logo vào giữa */
+  .header-top {
+    position: relative;
+  }
+  .header__logo {
     position: absolute;
     left: 50%;
     translate: -50% -50%;
-}
-/* căn lại vị trí của menu icon */
-.menu-header__icon{
+  }
+  /* căn lại vị trí của menu icon */
+  .menu-header__icon {
     position: absolute;
     top: 38px;
     left: 26px;
     color: #fff;
     width: 24px;
-}
+  }
 
-/* overlay */
-.menu-overlay{
+  /* overlay */
+  .menu-overlay {
     position: fixed;
-    background:rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     inset: 0;
     z-index: 1;
     /* bình thường thì ẩn overlay đi */
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
-}
+  }
 
-/* kiểm tra nếu munu-checkbox được check thì mở overlay lên */
+  /* kiểm tra nếu menu-checkbox được check thì mở overlay lên */
 
-.menu-checkbox:checked ~ .menu-overlay{
+  .menu-checkbox:checked ~ .menu-overlay {
     opacity: 1;
     visibility: visible;
+  }
+
+  /* drawer */
+  .menu-drawer {
+    position: fixed;
+    background-color: rgb(32, 21, 21);
+    inset: 0 40% 0 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    padding: 60px;
+  }
+  /* kiểm tra nếu checkbox được check thì hiện menu */
+
+  .menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0);
+  }
+
+  /* menu top */
+  .close__menu {
+    width: 24px;
+    color: #fff;
+  }
+
+  .menu-drawer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__list {
+    margin-top: 25px;
+    flex-direction: column;
+  }
+
+  #navbar__list--mobile {
+    margin-top: 25px;
+  }
+
+  .navbar__link {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .navbar__link:hover {
+    background-color: #00ffff37;
+  }
 }
-
-}
-
-
 
 /* Tablet */
 
@@ -57,6 +104,8 @@ position: relative;}
 }
 
 /* tạm ẩn phần không liên quan */
-.hero,.footer,main{
-    display: none;
+.hero,
+.footer,
+main {
+  display: none;
 }
